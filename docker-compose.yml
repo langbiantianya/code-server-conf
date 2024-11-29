@@ -3,7 +3,7 @@ services:
   code-server:
     image: code-server:latest
     restart: always
-    user: $(id -u):$(id -g)
+    user: ${UID}:${GID}
     volumes:
       - /data/code/data:/home/coder/
       - /var/run/docker.sock:/var/run/docker.sock
