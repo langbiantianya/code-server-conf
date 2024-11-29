@@ -1,0 +1,13 @@
+version: "1.0"
+services:
+  code-server:
+    image: code-server:latest
+    restart: always
+    user: $(id -u):$(id -g)
+    volumes:
+      - /data/code:/home/coder/
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DOCKER_USER=$USER
+    ports:
+      - 8100:8080
