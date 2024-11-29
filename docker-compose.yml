@@ -5,7 +5,7 @@ services:
     restart: always
     user: $(id -u):$(id -g)
     volumes:
-      - /data/code:/home/coder/
+      - /data/code/data:/home/coder/
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DOCKER_USER=$USER
